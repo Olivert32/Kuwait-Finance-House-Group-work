@@ -1,0 +1,386 @@
+/* Main CSS */
+.btn {
+  display: block;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-family: var(--font);
+  border: none;
+  border-radius: 5px;
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.green {
+  background: var(--green);
+  color: var(--black);
+}
+.green:hover {
+  background: var(--greenHover);
+}
+.red {
+  background: var(--red);
+  color: var(--white);
+}
+.red:hover {
+  background: var(--redHover);
+}
+.blue {
+  background: var(--blue);
+  color: var(--white);
+}
+.blue:hover {
+  background: var(--blueHover);
+}
+.black {
+  background: var(--blackHover);
+  color: var(--white);
+}
+.black:hover {
+  background: var(--black);
+}
+.lime {
+  background: rgb(112, 205, 50);
+  font-weight: 700;
+}
+.lime:hover {
+  background: rgb(100, 182, 45);
+}
+.box {
+  border: var(--border);
+  background: var(--white);
+  box-shadow: 2px 2px 1px rgb(187, 187, 187);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+.valid-message {
+  color: white;
+  background: rgb(100, 182, 45);
+  box-shadow: 2px 2px 1px rgb(100, 182, 45);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.error{
+  color: white;
+  background: rgb(255, 103, 103);
+  box-shadow: 2px 2px 1px rgb(255, 86, 86);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#searchBar {
+  width: clamp(50px, 95%, 500px);
+}
+.gap-row {
+  display: flex;
+  gap: 10px;
+}
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.max-500 {
+  width: clamp(100px, 100%, 500px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  margin-block: 30px;
+}
+.max-500 .btn {
+  max-width: 150px;
+}
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: var(--black);
+  text-transform: capitalize;
+}
+/* Start of custom CSS */
+header {
+  z-index: 999;
+}
+nav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: var(--green);
+}
+nav a,
+footer a {
+  padding: 2px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-family: var(--font);
+  transition: var(--transition);
+  border-radius: 25px;
+  text-transform: uppercase;
+  position: relative;
+}
+nav a {
+  padding: 5px 10px;
+  border-radius: 0;
+}
+nav a::after,
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to left, var(--white), var(--gray));
+  transform-origin: bottom right;
+  transition: transform var(--transition) ease-out;
+}
+nav a:hover::after,
+footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+}
+footer div div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: start;
+}
+footer p {
+  text-align: center;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.account_request {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 10px;
+}
+.account_request form {
+  display: flex;
+  gap: 9px;
+}
+table {
+  width: 100%;
+}
+table th {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: var(--green);
+  color: var(--white);
+}
+table :is(td, th) {
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+}
+table tbody tr:nth-child(even) {
+  background: var(--gray);
+}
+table tbody td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-page {
+  width: clamp(100px, 90%, 700px);
+  margin-inline: auto;
+  margin-block: 30px;
+}
+.profile-page > div:first-child a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile > div {
+  margin-block: 10px;
+}
+.profile > div > p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.profile .gap-row .circle {
+  margin-left: auto;
+}
+.profile-page p {
+  text-transform: capitalize;
+}
+.profile-page .email {
+  text-transform: lowercase;
+}
+.max-500 label {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-block-end: 5px;
+}
+.max-500 label::after {
+  content: ":";
+}
+.max-500 :is(input, select) {
+  outline: none;
+  padding: 5px;
+  border: var(--border);
+  font-size: 1.1rem;
+  height: 40px;
+  margin-block-end: 30px;
+}
+.max-500 .btn {
+  margin-block-end: 10px;
+}
+.email-validate {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-block: 20px;
+  background: var(--green);
+}
+.email-validate h1 {
+  padding-block: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: var(--border);
+}
+.email-validate .text {
+  margin-block: 20px 5px;
+}
+.email-validate fieldset {
+  padding-inline: 20px;
+  padding-block-end: 20px;
+  margin-inline: 40px;
+}
+.email-validate legend {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.email-validate div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.email-validate input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+.email-validate fieldset p {
+  text-align: center;
+}
+.email-validate a {
+  display: block;
+  margin-block: 10px;
+}
+.email-validate :is(h1, p, legend, a) {
+  color: var(--white);
+}
+.email-validate .btn {
+  margin-left: auto;
+}
+.detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.detail-page div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.detail-page div p:first-child {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.no-user {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 3rem;
+  color: rgb(194, 194, 194);
+  margin-block-start: 150px;
+}
+.carousel {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  z-index: -99;
+}
+.carousel img {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.carousel img {
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel img.active {
+  opacity: 1;
+}
+.index :is(h1, a) {
+  font-size: 3rem;
+  text-align: center;
+  margin-block: 50px;
+  color: gray;
+}
+.timeline {
+  position: relative;
+  margin-block-end: 40px;
+}
+.timeline > div,
+.summary > div {
+  display: flex;
+  gap: 5px;
+}
+.timeline p:first-child,
+.summary p:first-child {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: var(--green);
+}
+.timeline::after {
+  content: "|";
+  display: block;
+  position: absolute;
+  bottom: -46px;
+  left: 50%;
+  height: 45px;
+  width: 4px;
+  background: black;
+}
+
+.chart {
+  height: 300px;
+  width: 300px;
+  margin-inline: auto;
+}
+@media only screen and (max-width: 600px) {
+  .account_request {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+}

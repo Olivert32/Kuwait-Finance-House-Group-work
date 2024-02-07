@@ -1,0 +1,15 @@
+/* This CSS sheet should only be used for style that only apply to desktop devices */
+nav {
+  justify-content: space-around;
+  gap: 5px;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+}
+nav ul li {
+  list-style: none;
+}
+nav a:hover {
+  background: var(--greenHover);
+}

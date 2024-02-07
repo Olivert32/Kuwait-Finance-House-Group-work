@@ -1,0 +1,106 @@
+/* This CSS sheet should only be used for style that only apply to mobile devices */
+nav {
+  justify-content: space-between;
+}
+nav .burger {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+nav span {
+  height: 3px;
+  width: 30px;
+  background: var(--white);
+  transition: var(--transition);
+  border-radius: 25px;
+}
+nav ul {
+  position: absolute;
+  top: 50px;
+  height: 0px;
+  background: #eee;
+  overflow: hidden;
+  width: 100%;
+  transition: var(--transition) ease-in-out;
+}
+nav.active ul {
+  height: calc(100vh - 50px);
+}
+nav a {
+  display: block;
+  margin-block: 10px;
+}
+nav.active span:nth-child(1) {
+  rotate: 45deg;
+  transform: translate(6px, 7px);
+  animation: topMenu var(--transition);
+}
+nav.active span:nth-child(2) {
+  opacity: 0;
+}
+nav.active span:nth-child(3) {
+  rotate: -45deg;
+  transform: translate(6px, -7px);
+  animation: bottomMenu var(--transition);
+}
+nav ul a {
+  color: var(--black);
+}
+nav ul a::after {
+  background-image: linear-gradient(to left, var(--black), var(--black));
+}
+.email-validate fieldset {
+  padding-inline: 10px;
+  margin-inline: 0px;
+}
+.email-validate div {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.email-validate input {
+  width: 40px;
+  height: 40px;
+}
+.email-validate fieldset p {
+  text-align: center;
+}
+@keyframes topMenu {
+  25% {
+    width: 3px;
+    transform: translate(0px, 0px);
+  }
+  50% {
+    rotate: 0;
+    transform: translate(6px, -7px);
+  }
+  75% {
+    rotate: 45deg;
+    width: 3px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+@keyframes bottomMenu {
+  25% {
+    width: 3px;
+    transform: translate(0px, 0px);
+  }
+  50% {
+    rotate: 0;
+    transform: translate(6px, 7px);
+  }
+  75% {
+    rotate: -45deg;
+    width: 3px;
+  }
+  100% {
+    width: 30px;
+  }
+}

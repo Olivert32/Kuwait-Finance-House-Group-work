@@ -1,0 +1,75 @@
+/* This file should only be used to create new variable */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+*,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+:root {
+  --black: #000;
+  --blackHover: #333;
+  --white: #fff;
+  --gray: #eee;
+  --green: #128754;
+  --greenHover: #0c5e3a;
+  --blue: rgb(67, 67, 255);
+  --blueHover: blue;
+  --red: rgb(255, 68, 68);
+  --redHover: rgb(255, 28, 28);
+  --font: "Poppins", sans-serif;
+  --transition: 400ms;
+  --border: 1px solid rgb(226, 226, 226);
+}
+
+.wrapper {
+  width: clamp(200px, 100%, 1400px);
+  margin: auto;
+  padding-inline: 5px;
+}
+
+header,
+footer {
+  background: var(--green);
+}
+
+body {
+  background-image: linear-gradient(to bottom, #eee, var(--white));
+  background-repeat: no-repeat;
+}
+
+main {
+  min-height: 80vh;
+}
+
+footer {
+  min-height: 200px;
+  background: var(--green);
+}
+
+.grid-2,
+.grid-3,
+.grid-2-2,
+.grid-2-3 {
+  display: grid;
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-2-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-2-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3,
+  .grid-2-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
